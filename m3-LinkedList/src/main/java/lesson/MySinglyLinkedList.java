@@ -1,5 +1,7 @@
 package lesson;
 
+import java.util.Objects;
+
 public class MySinglyLinkedList {
 
     Node head;
@@ -105,15 +107,15 @@ public class MySinglyLinkedList {
         Node newNode = new Node(data);
 
         if (isEmpty()){
-            head = newNode;
+            head = tail = newNode;
         }else{
-            newNode.nextAddress = head;
-            head = newNode;
+            newNode.nextAddress = head;   // newNode --->>> Head
+            head = newNode; // we updated head for newNode
         }
 
+        size++;
 
     }
-
 
     public int getKthItemFromLast(int k){
 
@@ -139,7 +141,6 @@ public class MySinglyLinkedList {
 
 
     }
-
 
     public void removeKthItemFromLast(int k){
 
@@ -181,6 +182,37 @@ public class MySinglyLinkedList {
         }
 
     }
+
+    public void removeKthFromLast2(int k){
+        Node ptr1=head;
+        Node ptr2=head;
+        for(int i=0;i<k-1;i++) {
+
+            ptr2=ptr2.nextAddress;
+
+            if (ptr2==null)  System.out.println("Less than k elements");
+
+            else if(ptr2.nextAddress==null){
+                head=ptr1.nextAddress;
+                ptr1.nextAddress=null;
+                return;
+            }
+        }
+        while(ptr2.nextAddress.nextAddress!=null) {
+
+            ptr1=ptr1.nextAddress;
+            ptr2=ptr2.nextAddress;
+
+        }
+
+        ptr1.nextAddress=ptr1.nextAddress.nextAddress;
+        ptr1=ptr1.nextAddress;
+        ptr1=null;
+
+
+    }
+
+
 
     void printNodes() {
 
