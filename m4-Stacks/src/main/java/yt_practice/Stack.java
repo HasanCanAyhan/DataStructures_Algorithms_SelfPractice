@@ -14,7 +14,12 @@ public class Stack<T> {
         this.MAX = size;
     }
 
-    public T push(T item){
+    public T push(T item) throws Exception {
+
+        if (isFull()){
+            throw new Exception("Stack Overflow");
+        }
+
         stack[TOP++] = item;
         return item;
     }
@@ -27,11 +32,23 @@ public class Stack<T> {
         return stack[TOP-1];
     }
 
-    public Object pop() {
+    public Object pop() throws Exception {
+
+        if (isEmpty()){
+            throw new Exception("Stack underflow");
+        }
 
         return stack[--TOP];
 
     }
 
+
+    private boolean isFull(){
+        return  TOP >= MAX;
+    }
+
+    private boolean isEmpty(){
+        return TOP <= 0;
+    }
 
 }

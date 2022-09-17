@@ -3,7 +3,7 @@ package yt_practice;
 
 public class StackImplementation {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //creating stack
         Stack stack = new Stack(5);
@@ -14,6 +14,9 @@ public class StackImplementation {
         stack.push(3.14);
         stack.push(Boolean.TRUE);
         stack.push('V'); // top element
+
+        //stack.push(12L); //--->> stack overflow
+
 
         //print the element of stack
         stack.show();
@@ -27,6 +30,16 @@ public class StackImplementation {
         System.out.println("deletedElement = " + deletedElement);
         Object deletedElement2 = stack.pop();
         System.out.println("deletedElement2 = " + deletedElement2);
+
+        System.out.println("-------------------------------------------------------");
+
+
+        /*
+        StackOverflow
+        1.stack is full: inserting sth -->> isFull()
+        2.stack is empty: delete sth ---> isEmpty()
+         */
+
 
     }
 
