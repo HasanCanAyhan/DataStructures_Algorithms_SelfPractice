@@ -1,0 +1,61 @@
+package queues;
+
+import java.util.NoSuchElementException;
+
+public class MyQueue<T> {
+
+    QNode<T> front;
+    QNode<T> back;
+
+    int size;
+    boolean isEmpty(){
+        return front == null;
+    }
+
+    T peek(){
+        return (T) front.value;
+    }
+
+
+    void enqueue(T item){
+
+        QNode<T> node = new QNode<>(item);
+
+        if (isEmpty()) front = back = node;
+
+        else {
+
+            back.next = node;
+            back = node;
+
+        }
+
+        size++;
+
+    }
+
+    T dequeue(){ // firstly it will be removed front
+
+        QNode frontNode;
+
+        if (isEmpty()) throw new NoSuchElementException();
+
+        if (front==back){ //if there is  only one item
+            frontNode = front;
+            front = back = null;
+        }
+
+        else { // if there is more than one element in queue
+            frontNode=front;
+            front=front.next;
+        }
+
+        size--;
+        return (T) frontNode.value;
+    }
+
+    int size(){return size;}
+
+
+
+}
