@@ -22,6 +22,12 @@ public class CollectionsQueue {
         System.out.println(cq.remove());
         System.out.println(cq.remove());
 
+        System.out.println("---------------------");
+
+
+
+
+
 
     }
 
