@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MyTree {
 
     TNode root;
@@ -49,5 +52,63 @@ public class MyTree {
 
     }
 
+
+    //PRE ORDER TRAVERSAL OF THE TREE
+
+    //Root-Left-Right
+
+    void preOrderTraversal(TNode root){
+
+        if (root == null) return;
+
+        System.out.print(root.value + ", ");
+
+        preOrderTraversal(root.leftChild);
+        preOrderTraversal(root.rightChild);
+
+
+    }
+
+    //Left-Root-Right
+    void inOrderTraversal(TNode root){
+
+        if (root == null) return;
+        inOrderTraversal(root.leftChild);
+        System.out.print(root.value + ", ");
+        inOrderTraversal(root.rightChild);
+
+
+
+
+    }
+
+
+    //Left-Right-Root
+
+    void postOrderTraversal(TNode root){
+
+        if (root == null) return;
+        postOrderTraversal(root.leftChild);
+        postOrderTraversal(root.rightChild);
+        System.out.print(root.value + ", ");
+
+
+
+
+    }
+
+
+    void levelOrderTraversal(){
+        if(root==null) return;
+        Queue<TNode>  queue=new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            TNode toVisit=queue.poll();
+            System.out.print(toVisit.value+", ");
+            if (toVisit.leftChild!=null) queue.add(toVisit.leftChild);
+            if (toVisit.rightChild!=null) queue.add(toVisit.rightChild);
+
+        }
+    }
 
 }
