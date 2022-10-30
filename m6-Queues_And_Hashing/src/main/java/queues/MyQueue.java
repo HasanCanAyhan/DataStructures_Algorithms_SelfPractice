@@ -56,6 +56,15 @@ public class MyQueue<T> {
 
     int size(){return size;}
 
+    void printQueue(){
+        if (isEmpty()) return;
+        QNode<T> current=front;
+        while(current!=null) {
+            System.out.print(current.value);
+            if(current.next!=null) System.out.print(", ");
+            current=current.next;
+        }
+    }
 
 
 }
