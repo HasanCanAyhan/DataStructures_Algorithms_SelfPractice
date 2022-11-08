@@ -104,6 +104,7 @@ public class MyTree {
         queue.add(root);
         while(!queue.isEmpty()){
             TNode toVisit=queue.poll();
+            //poll:Retrieves and removes the head of this queue, or returns null if this queue is empty.
             System.out.print(toVisit.value+", ");
             if (toVisit.leftChild!=null) queue.add(toVisit.leftChild);
             if (toVisit.rightChild!=null) queue.add(toVisit.rightChild);
