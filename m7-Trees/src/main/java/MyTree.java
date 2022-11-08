@@ -114,6 +114,8 @@ public class MyTree {
 
 
     //-------------------------------------------------
+
+    //Task1
     public boolean contains(int value){
 
         if (root == null)return false;
@@ -133,22 +135,50 @@ public class MyTree {
 
     }
 
+    //Task2
     public boolean isLeaf(TNode node){
         return node.leftChild == null && node.rightChild == null;
     }
 
+    //Task3
     public void printLeaves(TNode root){
 
         if (root == null) return;
         //perform visit on root
         if (isLeaf(root)) System.out.print(root.value + " , ");
         //recursively branch leftSubtree
-        printLeaves(root.rightChild);
         printLeaves(root.leftChild);
+        printLeaves(root.rightChild);
+
 
         //recursively branch rightSubtree
 
     }
+
+    //Task4
+    public int countLeaves(TNode root) {
+
+        if (root == null) return 0;
+
+        if (isLeaf(root)) return 1;
+
+        return countLeaves(root.leftChild) + countLeaves(root.rightChild);
+
+
+    }
+
+    //Task5
+    public int findSumLeaves(TNode root) {
+
+        if (root == null) return 0;
+
+        if (isLeaf(root)) return root.value;
+
+        return findSumLeaves(root.leftChild) + findSumLeaves(root.rightChild);
+
+
+    }
+
 
 
 }

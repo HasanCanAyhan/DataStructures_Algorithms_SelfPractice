@@ -32,11 +32,17 @@ public class TreeApp {
 
         System.out.println("------------------------------------------------");
 
-        //System.out.println( tree.contains(8) );
+        System.out.println( tree.contains(8) );
 
         System.out.println("------------------------------------------------");
 
         tree.printLeaves(tree.root);
+        System.out.println();
+        System.out.println("countLeaves : " + tree.countLeaves(tree.root));
+
+        System.out.println("------------------------------------------------");
+
+        System.out.println("findSumLeaves = " + tree.findSumLeaves(tree.root));
 
     }
 }
