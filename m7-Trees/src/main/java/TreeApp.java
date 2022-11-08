@@ -44,6 +44,10 @@ public class TreeApp {
 
         System.out.println("findSumLeaves = " + tree.findSumLeaves(tree.root));
 
+        System.out.println("------------------------------------------------");
+
+        System.out.println("height = " + tree.height(tree.root));
+
     }
 
 
