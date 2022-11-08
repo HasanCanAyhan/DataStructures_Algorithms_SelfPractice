@@ -70,7 +70,7 @@ public class MyTree {
     }
 
     //Left-Root-Right
-    void inOrderTraversal(TNode root){
+    void inOrderTraversal(TNode root){ // returns with ascending order
 
         if (root == null) return;
         inOrderTraversal(root.leftChild);
