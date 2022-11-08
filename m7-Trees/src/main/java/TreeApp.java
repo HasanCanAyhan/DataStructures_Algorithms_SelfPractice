@@ -9,6 +9,7 @@ public class TreeApp {
 
        VisualizeTree.printTree(tree.root,null,false);
 
+        /*
         tree.preOrderTraversal(tree.root);
 
         System.out.println();
@@ -25,6 +26,17 @@ public class TreeApp {
         System.out.println("------------------------------------------------");
 
         tree.levelOrderTraversal();
+
+
+         */
+
+        System.out.println("------------------------------------------------");
+
+        //System.out.println( tree.contains(8) );
+
+        System.out.println("------------------------------------------------");
+
+        tree.printLeaves(tree.root);
 
     }
 }
