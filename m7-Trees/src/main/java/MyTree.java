@@ -210,4 +210,24 @@ public class MyTree {
     }
 
 
+    //Calculate sum of all nodes
+
+    public int calculateNodeSums(){
+
+        return nodeSums(root, root.value);
+    }
+
+    public int nodeSums(TNode node, int A){
+
+        if (node == null) return 0;
+
+        return A + nodeSums(node.leftChild, node.value) + nodeSums(node.rightChild, node.value);
+
+
+
+    }
+
+
+
+
 }

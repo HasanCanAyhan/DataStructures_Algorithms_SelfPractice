@@ -48,6 +48,16 @@ public class TreeApp {
 
         System.out.println("height = " + tree.height(tree.root));
 
+        System.out.println("------------------------------------------------");
+
+        System.out.println("Sum of Node Depths is : " + tree.calculateNodeDepthSums());
+
+        System.out.println("------------------------------------------------");
+
+        System.out.println("Sum of all Nodes is : " + tree.calculateNodeSums());
+
+
+
     }
 
 
