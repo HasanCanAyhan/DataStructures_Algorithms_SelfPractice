@@ -4,9 +4,9 @@ public class Fibonacci {
 
     public static void main(String[] args) {
 
-        int answer = fibonacciNum(4);
-        System.out.println(fibonacciNum(answer));
+        int n = 7;
 
+        System.out.println(fibonacciNum(n));
     }
 
     static int fibonacciNum(int n){
@@ -15,9 +15,7 @@ public class Fibonacci {
             return n;
         }
 
-        if (n == 2) return 1;
-
-        return fibonacciNum(n-1) + fibonacciNum( n-2);
+        return (fibonacciNum(n-1) + fibonacciNum( n-2));
     }
 
 }
