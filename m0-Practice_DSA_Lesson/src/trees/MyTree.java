@@ -150,6 +150,21 @@ public class MyTree {
 
     }
 
+    public int maxPathSum(TNode root){
+
+        if (root == null) return Integer.MIN_VALUE;//?
+
+        if (root.leftChild == null && root.rightChild == null) return root.value;
+
+        int maxChildPathSum = Math.max(
+                maxPathSum(root.leftChild), maxPathSum(root.rightChild)
+                );
+
+        return root.value + maxChildPathSum;
+
+
+
+    }
 
 
 
