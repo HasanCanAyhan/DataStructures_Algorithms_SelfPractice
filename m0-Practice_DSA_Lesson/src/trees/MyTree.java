@@ -112,6 +112,32 @@ public class MyTree {
     }
 
 
+    public int minValue(TNode root){
+
+        if (root == null) return 0;
+
+        Queue<TNode> queue = new PriorityQueue<>();
+        queue.add(root);
+
+        int min = Integer.MAX_VALUE;
+        while (queue.size() > 0){
+
+            TNode curr = queue.poll();
+            if (curr.value < min){
+                min = curr.value;
+            }
+
+            if (curr.leftChild != null) queue.add(curr.leftChild);
+
+            if (curr.rightChild != null)queue.add(curr.rightChild);
+
+        }
+
+        return min;
+
+
+    }
+
 
 
 
