@@ -139,6 +139,17 @@ public class MyTree {
     }
 
 
+    public int minValue_recursive(TNode root){
+
+        if (root == null) return 0;
+
+        int leftMin = minValue_recursive(root.leftChild);
+        int rightMin = minValue_recursive(root.rightChild);
+
+        return Math.min(root.value,Math.min(leftMin,rightMin));
+
+    }
+
 
 
 
