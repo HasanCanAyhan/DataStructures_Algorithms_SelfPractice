@@ -43,6 +43,7 @@ public class MyTree {
         if (root == null) return false;
 
         Queue<TNode> queue = new PriorityQueue<>();
+        queue.add(root);
 
         while (queue.size() > 0){
 
@@ -69,12 +70,46 @@ public class MyTree {
 
         if (root.value == target) return true;
 
-        return treeIncludes(root.leftChild,target) || treeIncludes(root.rightChild,target);
+        return treeIncludes_recursive(root.leftChild,target) || treeIncludes_recursive(root.rightChild,target);
 
 
 
     }
 
+
+    public int sumOfEachNodes(TNode root){
+
+        if (root == null) return 0;
+
+        Queue<TNode> queue = new PriorityQueue<>();
+        queue.add(root);
+
+        int sum = 0;
+        while (queue.size() > 0){
+
+            TNode curr = queue.poll();
+            sum += curr.value;
+
+            if (curr.leftChild != null) queue.add(curr.leftChild);
+
+            if (curr.rightChild != null)queue.add(curr.rightChild);
+
+        }
+
+        return sum;
+
+
+    }
+
+
+    public int sumOfEachNodes_recursive(TNode root){
+
+        if (root == null) return 0;
+
+        //            3               13                                             5
+        return root.value + sumOfEachNodes_recursive(root.leftChild) + sumOfEachNodes_recursive(root.rightChild);
+
+    }
 
 
 
