@@ -78,6 +78,13 @@ public class BSTTest {
         System.out.println("Task6- height");
         System.out.println(bst.height(bst.root));
 
+        System.out.println();
+        System.out.println("##########################################################");
+
+        System.out.println("Task7- sumOfNodeDepths");
+        System.out.println(bst.sumOfNodeDepths(bst.root,0));
+
+
 
 
     }

@@ -217,5 +217,12 @@ public class BinarySearchTree {
 
     } //https://youtu.be/_SiwrPXG9-g
 
+    int sumOfNodeDepths(TNode root, int A){
+
+        if (root == null) return 0;
+
+        return A + sumOfNodeDepths(root.leftChild, A+1) + sumOfNodeDepths(root.rightChild,A+1);
+
+    }
 
 }
