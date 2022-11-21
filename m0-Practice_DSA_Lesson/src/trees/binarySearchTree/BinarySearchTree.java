@@ -63,6 +63,28 @@ public class BinarySearchTree {
 
     }
 
+    void inOrder(TNode root){ // left, root, right
+
+        if (root == null)return;
+
+        inOrder(root.leftChild);
+        System.out.print(root.value + " -> ");
+        inOrder(root.rightChild);
+
+
+    }
+
+    void postOrder(TNode root){//left, right, root
+
+        if (root == null) return;
+
+        postOrder(root.leftChild);
+        postOrder(root.rightChild);
+        System.out.print(root.value + " -> ");
+
+    }
+
+
 
 
 }

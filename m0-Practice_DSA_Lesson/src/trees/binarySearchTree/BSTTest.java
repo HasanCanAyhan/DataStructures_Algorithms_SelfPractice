@@ -16,9 +16,18 @@ public class BSTTest {
 
         System.out.println("##########################################################");
 
-        System.out.println("PreOrder");
+        System.out.println("PreOrder"); // 2.Pre-Order
         bst.preOrder(bst.root);
 
+        System.out.println("##########################################################");
+
+        System.out.println("InOrder"); // 3.In-Order : ascending order
+        bst.inOrder(bst.root);
+
+        System.out.println("##########################################################");
+
+        System.out.println("PostOrder"); // 4.Post-Order
+        bst.postOrder(bst.root);
 
 
     }
