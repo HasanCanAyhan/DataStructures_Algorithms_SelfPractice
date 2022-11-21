@@ -39,5 +39,46 @@ public class BSTTest {
         System.out.println("LevelOrder"); // 5.Breadth-First(Level Order);
         bst.levelOrder(bst.root);
 
+        System.out.println();
+
+        System.out.println("##########################################################");
+
+        System.out.println("Task1 - isContains"); //Task1
+        System.out.println(bst.contains(bst.root,5));
+
+        System.out.println("##########################################################");
+
+        System.out.println(bst.contains2(bst.root,11));
+
+        System.out.println("##########################################################");
+        System.out.println("Task3 - printLeaves");
+        bst.printLeaves(bst.root);
+
+        System.out.println();
+        System.out.println("##########################################################");
+
+        System.out.println("Task3- 2.Solution - printLeaves");
+        bst.printLeaves2(bst.root);
+
+        System.out.println();
+        System.out.println("##########################################################");
+
+        System.out.println("Task4- countLeaves");
+        System.out.println(bst.countLeaves(bst.root));
+
+        System.out.println();
+        System.out.println("##########################################################");
+
+        System.out.println("Task5- findSumOfLeaves");
+        System.out.println(bst.findSumOfLeaves(bst.root));
+
+        System.out.println();
+        System.out.println("##########################################################");
+
+        System.out.println("Task6- height");
+        System.out.println(bst.height(bst.root));
+
+
+
     }
 }
