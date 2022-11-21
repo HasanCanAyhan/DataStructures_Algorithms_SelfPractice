@@ -227,6 +227,10 @@ public class BinarySearchTree {
 
     //week 31- mentor -A_Q
     //Range Sum of BST
+    /*
+    Given the root node of a binary search tree and two integers low and high, return the sum of values of all nodes with a
+    value in the inclusive range [low, high].
+     */
 
     int rangeSumOfBST(TNode root, int low , int high){
 
@@ -249,6 +253,22 @@ public class BinarySearchTree {
         }
 
         return sum;
+
+    }
+
+
+    //week 31 - mentor - A_Q
+    //Same Tree
+
+    boolean sameTree(TNode p, TNode q){
+
+        if (p == null && q == null) return  true;
+        if (p == null || q == null) return false;
+
+        return p.value == q.value
+                && sameTree(p.leftChild, q.leftChild)
+                && sameTree(p.rightChild, q.rightChild);
+
 
     }
 
