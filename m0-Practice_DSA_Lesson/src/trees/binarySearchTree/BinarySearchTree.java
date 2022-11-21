@@ -225,4 +225,32 @@ public class BinarySearchTree {
 
     }
 
+    //week 31- mentor -A_Q
+    //Range Sum of BST
+
+    int rangeSumOfBST(TNode root, int low , int high){
+
+        if (root == null) return 0;
+
+        Queue<TNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        int sum = 0;
+        while (queue.size() > 0){
+
+            TNode current = queue.poll();
+            if (low <= current.value && current.value <= high){
+                sum += current.value;
+            }
+
+            if (current.leftChild != null) queue.add(current.leftChild);
+            if (current.rightChild != null) queue.add(current.rightChild);
+
+        }
+
+        return sum;
+
+    }
+
+
 }

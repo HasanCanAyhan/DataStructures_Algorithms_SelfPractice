@@ -7,7 +7,8 @@ public class BSTTest {
         BinarySearchTree bst = new BinarySearchTree();
 
         int[] numbers=new int[] { 10, 6, 8, 20, 4, 9, 5, 17, 42, 47, 29};
-        for (int i = 0; i <11; i++) {
+        //int[] numbers=new int[] { 10,5,15,3,7,13,18,1,6};
+        for (int i = 0; i < numbers.length; i++) {
             bst.insert(numbers[i]); // 1.Insert operation
         }
 
@@ -84,8 +85,11 @@ public class BSTTest {
         System.out.println("Task7- sumOfNodeDepths");
         System.out.println(bst.sumOfNodeDepths(bst.root,0));
 
+        System.out.println();
+        System.out.println("##########################################################");
 
-
+        System.out.println("Range Sum Of BST");
+        System.out.println(bst.rangeSumOfBST(bst.root,6,10));
 
     }
 }
