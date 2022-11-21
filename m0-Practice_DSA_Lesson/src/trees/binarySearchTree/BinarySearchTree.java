@@ -1,5 +1,8 @@
 package trees.binarySearchTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
 
     TNode root;
@@ -84,7 +87,23 @@ public class BinarySearchTree {
 
     }
 
+    void levelOrder(TNode root){
 
+        if (root == null) return;
+        Queue<TNode> queue=new LinkedList<>();
+        queue.add(root);
+
+        while (queue.size() > 0){
+
+            TNode curr = queue.poll();
+            System.out.print(curr.value + " -> ");
+
+            if (curr.leftChild != null) queue.add(curr.leftChild);
+            if (curr.rightChild != null) queue.add(curr.rightChild);
+
+        }
+
+    }
 
 
 }

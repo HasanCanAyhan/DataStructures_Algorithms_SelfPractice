@@ -29,6 +29,11 @@ public class BSTTest {
         System.out.println("PostOrder"); // 4.Post-Order
         bst.postOrder(bst.root);
 
+        System.out.println("##########################################################");
+
+        System.out.println("PostOrder"); // 5.Breadth-First(Level Order);
+        bst.levelOrder(bst.root);
+
 
     }
 }
