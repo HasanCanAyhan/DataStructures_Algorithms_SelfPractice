@@ -1,8 +1,6 @@
 package trees.binarySearchTree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class BinarySearchTree {
 
@@ -70,6 +68,30 @@ public class BinarySearchTree {
         System.out.print(root.value + " -> ");
         inOrder(root.rightChild);
 
+
+    }
+
+    public static List<Integer> inorderTraversal2(TNode root) { // without using recursive
+
+        Stack<TNode> stack = new Stack<>();
+        List<Integer> list = new ArrayList<>();
+
+        TNode curr = root;
+        while (stack.size() > 0 || curr != null){
+
+            while (curr != null){
+                stack.push(curr);
+                curr = curr.leftChild;
+            }
+
+            curr = stack.pop();
+            list.add(curr.value);
+            curr = curr.rightChild;
+
+
+        }
+
+        return list;
 
     }
 
