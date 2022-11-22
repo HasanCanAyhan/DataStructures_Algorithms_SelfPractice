@@ -60,6 +60,35 @@ public class BinarySearchTree {
 
     }
 
+    public void preOrderTraversal2(TNode root) {  //using Stack ,  root, left, right
+
+        if (root == null) return;
+
+        Stack<TNode> stack = new Stack<>();
+        stack.push(root);
+        TNode curr = root;
+        while (stack.size() > 0 ){
+
+            curr = stack.pop();
+            System.out.print(curr.value + " -> ");
+            if (curr.rightChild != null) {
+                stack.push(curr.rightChild);
+            }
+
+            if (curr.leftChild != null) {
+                stack.push(curr.leftChild);
+
+            }
+
+
+        }
+
+
+
+
+
+    }
+
     void inOrder(TNode root) { // left, root, right
 
         if (root == null) return;
