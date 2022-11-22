@@ -6,8 +6,8 @@ public class BSTTest {
 
         BinarySearchTree bst = new BinarySearchTree();
 
-        int[] numbers=new int[] { 10, 6, 8, 20, 4, 9, 5, 17, 42, 47, 29};
-        //int[] numbers=new int[] { 10,5,15,3,7,13,18,1,6};
+        //int[] numbers=new int[] { 10, 6, 8, 20, 4, 9, 5, 17, 42, 47, 29};
+        int[] numbers=new int[] { 10,5,15,3,7,13,18,1,6};
         for (int i = 0; i < numbers.length; i++) {
             bst.insert(numbers[i]); // 1.Insert operation
         }
@@ -17,6 +17,7 @@ public class BSTTest {
 
         System.out.println("##########################################################");
 
+        /*
         System.out.println("PreOrder"); // 2.Pre-Order using Stack
         bst.preOrder(bst.root);
         System.out.println();
@@ -26,7 +27,6 @@ public class BSTTest {
         System.out.println("PreOrder_usingStack"); // 2.Pre-Order
         bst.preOrderTraversal2(bst.root);
 
-             /*
         System.out.println("##########################################################");
 
         System.out.println("InOrder"); // 3.In-Order : ascending order
@@ -34,6 +34,8 @@ public class BSTTest {
 
         System.out.println();
 
+
+         */
         System.out.println("##########################################################");
 
         System.out.println("PostOrder"); // 4.Post-Order
@@ -45,6 +47,8 @@ public class BSTTest {
 
         System.out.println("##########################################################");
 
+
+        /*
         System.out.println("LevelOrder"); // 5.Breadth-First(Level Order);
         bst.levelOrder(bst.root);
 
