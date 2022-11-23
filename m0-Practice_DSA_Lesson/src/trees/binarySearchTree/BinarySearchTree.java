@@ -134,7 +134,41 @@ public class BinarySearchTree {
 
     }
 
-    void postOrder_withoutUsingRecursive(TNode root){//left, right, root
+    List<Integer> postOrder_withoutUsingRecursive(TNode root){//left, right, root
+
+        List<Integer> result = new ArrayList<>();
+        Stack<TNode> stack = new Stack<>();
+
+        TNode curr = root;
+
+        if (root == null) return result;
+
+        while (stack.size() > 0 || curr != null){
+
+            if (curr != null){
+                stack.push(curr);
+                curr = curr.leftChild;
+            }else {
+                if (stack.peek().rightChild == null){
+                    TNode temp = stack.pop();
+                    result.add(temp.value);
+                    while (!stack.isEmpty() && temp == stack.peek().rightChild){
+                        temp = stack.pop();
+                        result.add(temp.value);
+                    }
+                }else {
+                    //no
+                    curr = stack.peek().rightChild;
+                }
+            }
+
+
+
+        }
+
+
+        return result;
+
 
 
 
