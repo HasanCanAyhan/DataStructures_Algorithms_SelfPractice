@@ -101,6 +101,48 @@ public class Node {
     }
 
 
+    public int sumOfNodesOfLinkedList_recursive2(Node head) {
+
+        int sum = 0;
+        sum += callSumRecursively(head,sum);
+        return sum;
+
+
+    }
+
+    public int callSumRecursively(Node head, int sum) {
+
+        if (head == null) return sum;
+
+        sum += head.val;
+
+        return callSumRecursively(head.next,sum);
+    }
+
+    public boolean findNode(Node head, int val){
+
+        Node curr = head;
+        while (curr != null){
+            if (curr.val == val ) {
+                System.out.println(curr.val);
+                return true;
+            }
+            curr = curr.next;
+        }
+
+        return false;
+    }
+
+
+    public boolean findNode_recursive(Node head, int target){
+
+        if (head == null) return false;// it means we could not find the specific node
+
+        if (head.val == target) return true;
+
+        return findNode_recursive(head.next,target);
+
+    }
 
     public static void main(String[] args) {
 
@@ -138,7 +180,15 @@ public class Node {
 
         System.out.println( node.sumOfNodesOfLinkedList_recursive(node.next));
 
+        System.out.println(node.sumOfNodesOfLinkedList_recursive2(node.next));
 
+        System.out.println();
+        System.out.println("--------------------");
+
+
+        System.out.println(node.findNode(node.next,55));
+
+        System.out.println(node.findNode_recursive(node.next,3));
 
 
 
