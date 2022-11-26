@@ -76,6 +76,32 @@ public class Node {
     }
 
 
+    public int sumOfNodesOfLinkedList(Node head){
+
+        int sum = 0;
+        Node curr = head;
+        while (curr != null){
+            sum += curr.val;
+            curr = curr.next;
+        }
+
+        return sum;
+    }
+
+
+
+    public int sumOfNodesOfLinkedList_recursive(Node head) {
+
+        if (head == null) return 0;
+
+        int curr = sumOfNodesOfLinkedList_recursive(head.next);
+        return head.val + curr;
+
+
+    }
+
+
+
     public static void main(String[] args) {
 
         Node node = new Node();
@@ -106,6 +132,14 @@ public class Node {
         System.out.println("--------------------");
 
         System.out.println( node.showValuesOfLinkedList_recursive(node.next));
+
+        System.out.println();
+        System.out.println("--------------------");
+
+        System.out.println( node.sumOfNodesOfLinkedList_recursive(node.next));
+
+
+
 
 
     }
