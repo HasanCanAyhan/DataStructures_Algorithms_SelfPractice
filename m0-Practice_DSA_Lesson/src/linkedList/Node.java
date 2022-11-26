@@ -144,6 +144,72 @@ public class Node {
 
     }
 
+
+    public int getNodeValue(Node head, int index){
+
+        if (head == null) return -1;
+
+        Node curr = head;
+        int count = 0;
+
+        while (curr != null){
+
+            if (index == count) return curr.val;
+            count++;
+            curr = curr.next;
+        }
+
+        return -1;
+    }
+
+
+    public int getNodeValue_recursive(Node head, int index){ // head, 2 ,   1 2 3 4 ==>> 3
+
+        if (head == null) return -1;
+
+        if (index == 0) return head.val;
+
+        return getNodeValue_recursive(head.next,index-1);
+
+
+
+    }
+
+
+    public void callRecursive_reversed(Node head) {
+
+        if (head == null) {
+            return;
+        }
+
+        callRecursive_reversed(head.next);
+        System.out.print(head.val + " -> ");
+
+
+    }
+
+
+    public void reversedLinkedList(Node head){
+
+        Node prev = null;
+        Node curr = head;
+
+        while (curr != null){
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        while (prev != null) {
+            System.out.print(prev.val + " -> ");
+            prev = prev.next;
+        }
+        System.out.println("null");
+
+    }
+
+
     public static void main(String[] args) {
 
         Node node = new Node();
@@ -190,7 +256,21 @@ public class Node {
 
         System.out.println(node.findNode_recursive(node.next,3));
 
+        System.out.println();
+        System.out.println("--------------------");
 
+        System.out.println(node.getNodeValue_recursive(node.next,2));
+
+
+        System.out.println();
+        System.out.println("--------------------");
+
+        node.callRecursive_reversed(node.next);
+
+        System.out.println();
+        System.out.println("--------------------");
+
+        node.reversedLinkedList(node.next);
 
     }
 
