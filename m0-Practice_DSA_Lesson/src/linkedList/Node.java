@@ -1,5 +1,10 @@
 package linkedList;
 
+//https://youtu.be/Hj_rA0dhr2I
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Node {
 
     int val;
@@ -38,6 +43,39 @@ public class Node {
 
     }
 
+    public List<Integer> showValuesOfLinkedList(Node head){
+
+        List<Integer> list = new ArrayList<>();
+
+        Node curr = head;
+
+        while (curr != null){
+            list.add(curr.val);
+
+            curr = curr.next;
+        }
+
+        return list;
+
+    }
+
+    public List<Integer> showValuesOfLinkedList_recursive(Node head){ //main function for recursive
+
+        List<Integer> list = new ArrayList<>();
+        fillValues(head,list);
+        return list;
+
+    }
+
+    private void fillValues(Node head, List<Integer> list) {
+
+        if (head == null) return;
+        list.add(head.val);
+        fillValues(head.next,list);
+
+    }
+
+
     public static void main(String[] args) {
 
         Node node = new Node();
@@ -57,6 +95,19 @@ public class Node {
         System.out.println("--------------------");
 
         node.printLinkedList_recursive(a);
+
+        System.out.println();
+        System.out.println("--------------------");
+
+        System.out.println( node.showValuesOfLinkedList(node.next) );
+
+
+        System.out.println();
+        System.out.println("--------------------");
+
+        System.out.println( node.showValuesOfLinkedList_recursive(node.next));
+
+
     }
 
 
