@@ -210,6 +210,52 @@ public class Node {
     }
 
 
+    public Node zipperLists(Node head1, Node head2){
+
+
+        Node tail = head1;
+        Node curr1 = head1.next;
+        Node curr2 = head2;
+
+        int count = 0;
+        while (curr1 != null && curr2 != null){
+
+            if(count %2 == 0){
+                tail.next = curr2;
+                curr2 = curr2.next;
+            }else {
+                tail.next = curr1;
+                curr1 = curr1.next;
+            }
+            tail = tail.next;
+
+            count ++;
+
+        }
+
+        if (curr1 != null) tail.next = curr1;
+        if (curr2 != null) tail.next = curr2;
+
+        return head1;
+
+    }
+
+
+    public Node zipperLists_recursive(Node head1, Node head2){
+
+        if (head1 == null && head2 == null) return null;
+        if (head1 == null) return head2;
+        if (head2 == null) return head1;
+
+
+        Node next1 = head1.next;
+        Node next2 = head2.next;
+
+        head1.next = head2;
+        head2.next = zipperLists_recursive(next1,next2);
+
+        return head1;
+    }
     public static void main(String[] args) {
 
         Node node = new Node();
