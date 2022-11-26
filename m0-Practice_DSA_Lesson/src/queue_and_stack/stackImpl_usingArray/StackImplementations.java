@@ -26,6 +26,11 @@ public class StackImplementations {
         System.out.println( "peek : " + stack.peek() );
         System.out.println("pop : " + stack.pop());
         System.out.println( "peek : " + stack.peek() );
+        System.out.println("pop : " + stack.pop());
+        System.out.println("pop : " + stack.pop());
+        System.out.println("pop : " + stack.pop());
+        //System.out.println("pop : " + stack.pop()); // stack underFlow
+
 
     }
 

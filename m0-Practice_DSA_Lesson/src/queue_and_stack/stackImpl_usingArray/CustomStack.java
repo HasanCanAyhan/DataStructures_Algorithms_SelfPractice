@@ -25,23 +25,40 @@ public class CustomStack<T> {
     }
 
 
-    public void show() {
+    public void show() throws Exception {
+        if (isEmpty()){
+            throw new Exception("Stack Under Flow");
+        }
         Arrays.stream(stack).forEach(System.out::println);
     }
 
 
-    public Object peek() {
+    public Object peek() throws Exception {
 
+        if (isEmpty()){
+            throw new Exception("Stack Under Flow");
+        }
         return stack[TOP-1];
 
     }
 
-    public Object pop() {
+    public Object pop() throws Exception {
+        if (isEmpty()){
+            throw new Exception("Stack Under Flow");
+        }
        return stack[--TOP];
     }
 
+    //Stack overflow
+    //1. stack is full while inserting
+    //2. stack is empty while deleting
+
     public boolean isFull(){
         return TOP >= MAX;
+    }
+
+    public boolean isEmpty(){
+        return TOP <= 0;
     }
 
 
