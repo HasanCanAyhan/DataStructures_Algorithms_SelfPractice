@@ -82,6 +82,71 @@ public class MyHeap {
     }
 
 
+    public int remove(){
+        if (size == 0) throw new NoSuchElementException();
+
+        else {
+
+            int result = items[0];
+            items[0] = items[--size]; // we changed first//root with last item
+
+            bubbleDown();
+
+            return result;
+
+        }
+
+    }
+
+    private void bubbleDown() {
+
+        //first , we check which child is larger
+        int index = 0; // root
+        int largerChildIndex;
+        while (index <= size && !isValidParent(index)){
+           largerChildIndex = largerChildIndex(index);
+           swap(index,largerChildIndex);
+           index = largerChildIndex;
+        }
+
+    }
+
+    private int largerChildIndex(int index) {
+        if (!hasLeftChild(index)) return index;
+        else if (!hasRightChild(index)){
+            return leftChildIndex(index);
+        }else {
+            return items[leftChildIndex(index)] > rightChildIndex(index) ? leftChildIndex(index) : rightChildIndex(index);
+        }
+    }
+
+    private boolean isValidParent(int index) {
+        if (!hasLeftChild(index)) return true; // is valid ->> parent should be grater than both children
+        else {
+            boolean isValid = false;
+            if (hasRightChild(index)){
+                isValid = (items[index] >= items[leftChildIndex(index)] && items[index] >= items[rightChildIndex(index)]);
+            }
+
+            return isValid;
+        }
+    }
+
+    private boolean hasLeftChild(int index) {
+        return leftChildIndex(index) <= size;
+    }
+    private boolean hasRightChild(int index) {
+        return rightChildIndex(index) <= size;
+    }
+
+    public int leftChildIndex(int index){
+        return index*2 +1;
+    }
+
+    public int rightChildIndex(int index){
+        return index*2 +2;
+    }
+
     public void  printHeap(){
 
         for (int i = 0; i < size; i++) {

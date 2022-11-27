@@ -15,9 +15,9 @@ public class HeapApp {
 
 
         heap.printHeap();
-        //heap.remove();
+        heap.remove();
 
-        //heap.printHeap();
+        heap.printHeap();
 
 
 
