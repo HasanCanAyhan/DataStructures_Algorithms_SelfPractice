@@ -2,6 +2,17 @@ package heap;
 
 import java.util.NoSuchElementException;
 
+/*
+Useful Resources forHeap
+//https://www.youtube.com/watch?v=HqPJF2L5h9U
+//https://www.youtube.com/watch?v=leVBbOGDD2U
+//https://www.youtube.com/watch?v=JS-5PA8hFA4&list=PLUUSh8du1azZEsdngPxMQGLnatId0V4h9&index=18
+//https://www.youtube.com/watch?v=Q_eia3jC9Ts&list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU&index=103
+//https://www.youtube.com/watch?v=NEtwJASLU8Q
+
+
+
+ */
 public class MyHeap {
 
     int[] items;
