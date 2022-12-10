@@ -57,7 +57,9 @@ public class HeapApp {
         int remove_forth = customHeap_review.remove();
         System.out.println("remove4= " + remove_forth);
         customHeap_review.printHeap();
-
+        int remove_fifth = customHeap_review.remove();
+        System.out.println("remove5= " + remove_fifth);
+        customHeap_review.printHeap();
 
     }
 
