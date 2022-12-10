@@ -1,4 +1,4 @@
-package serachMethods;
+package searchMethods;
 
 public class LinearSearch {
 }
