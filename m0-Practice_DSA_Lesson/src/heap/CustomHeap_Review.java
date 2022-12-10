@@ -73,7 +73,7 @@ public class CustomHeap_Review {
     private void bubbleDown() {
 
         int startIndex = 0;
-        while (startIndex < size) {
+        while (startIndex <= size ){
         int leftChildIndex = findLeftIndex(startIndex);
         int rightChildIndex = findRightIndex(startIndex);
 
@@ -114,6 +114,7 @@ public class CustomHeap_Review {
 
 
     }
+
 
     private boolean hasRightChild(int rightChildIndex) {
         return rightChildIndex <= size;
