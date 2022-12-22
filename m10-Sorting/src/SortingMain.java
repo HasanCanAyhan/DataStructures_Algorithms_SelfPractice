@@ -10,6 +10,16 @@ public class SortingMain {
         System.out.println("-------------------------------");
 
         System.out.println(Arrays.toString(SelectionSort.selectionSort(numbers)));//[-1, 1, 2, 4, 6, 7, 9]
+
+        System.out.println("-------------------------------");
+
+        System.out.println(Arrays.toString(InsertionSort.insertionSort(numbers)));
+
+        System.out.println("-------------------------------");
+
+        JD1MergeSort.mergeSort(numbers);
+        System.out.println(Arrays.toString(numbers));
+
     }
 
 }

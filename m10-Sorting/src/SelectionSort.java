@@ -2,7 +2,9 @@ public class SelectionSort {
 
     public static int[] selectionSort(int[] array){
 
-        for (int i = 0; i < array.length ; i++) {
+        //sorted part- unsorted part
+
+        for (int i = 0; i < array.length-1 ; i++) {
 
             int minIndex = i;
 
