@@ -20,6 +20,12 @@ public class SortingMain {
         JD1MergeSort.mergeSort(numbers);
         System.out.println(Arrays.toString(numbers));
 
+        System.out.println("-------------------------------");
+
+        JD1QuickSort.qSort(numbers,0,numbers.length-1);
+        System.out.println(Arrays.toString(numbers));
+
+
     }
 
 }
